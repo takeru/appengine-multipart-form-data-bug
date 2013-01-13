@@ -1,0 +1,29 @@
+application: ssktkr-com
+version: multipart-formdata
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+- url: /css
+  static_dir: css
+- url: /js
+  static_dir: js
+- url: /img
+  static_dir: img
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.1"
+- name: jinja2
+  version: "2.6"
+- name: django
+  version: "1.3"
+# workaround. http://code.google.com/p/googleappengine/issues/detail?id=2749#c56
+- name: webob
+  version: "1.2.3"

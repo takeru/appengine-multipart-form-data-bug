@@ -21,6 +21,21 @@ class MyHandler(blobstore_handlers.BlobstoreUploadHandler):
         html = '''
 <html>
 <body>
+
+<h1>Workaround for Issue 2749:Blobstore handler breaking data encoding</h1>
+
+<p>
+<a href="http://code.google.com/p/googleappengine/issues/detail?id=2749">
+http://code.google.com/p/googleappengine/issues/detail?id=2749
+</a>
+</p>
+
+<p>
+<a href="https://github.com/takeru/appengine-multipart-form-data-bug">
+https://github.com/takeru/appengine-multipart-form-data-bug
+</a>
+</p>
+
 <form action="%s" method="post" enctype="multipart/form-data">
   <input type="text" name="text1" value="あいうえお">
   <input type="file" name="file1">
